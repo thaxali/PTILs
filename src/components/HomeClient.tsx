@@ -47,8 +47,8 @@ export default function HomeClient({ ptils }: { ptils: PTIL[] }) {
     <div className="min-h-screen flex flex-col">
       <Header />
 
-      <main className="flex-1 flex flex-col items-center justify-center px-6 py-12">
-        <p className="font-[family-name:var(--font-instrument-serif)] text-3xl text-foreground mb-10 text-center">
+      <main className="flex-1 flex flex-col items-center justify-center px-6 py-4">
+        <p className="font-[family-name:var(--font-instrument-serif)] text-3xl text-foreground mb-6 text-center">
           Discover New AI Prompts
         </p>
 
@@ -104,7 +104,7 @@ export default function HomeClient({ ptils }: { ptils: PTIL[] }) {
 
         <button
           onClick={handleShuffle}
-          className="mt-8 flex items-center gap-2 px-6 py-3 rounded-full bg-white/40 backdrop-blur-md border border-white/60 text-foreground font-[family-name:var(--font-jetbrains-mono)] text-sm hover:bg-white/60 transition-all duration-200 shadow-sm hover:shadow-md"
+          className="mt-5 flex items-center gap-2 px-6 py-3 rounded-full bg-white/40 backdrop-blur-md border border-white/60 text-foreground font-[family-name:var(--font-jetbrains-mono)] text-sm hover:bg-white/60 transition-all duration-200 shadow-sm hover:shadow-md"
         >
           <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
             <polyline points="16 3 21 3 21 8" />
@@ -116,9 +116,6 @@ export default function HomeClient({ ptils }: { ptils: PTIL[] }) {
           Shuffle
         </button>
 
-        <p className="mt-3 text-xs text-muted font-[family-name:var(--font-jetbrains-mono)]">
-          {currentIndex + 1} / {ptils.length}
-        </p>
         <p className="mt-2 text-xs text-muted/60 font-[family-name:var(--font-jetbrains-mono)] hidden sm:block">
           press <kbd className="px-1.5 py-0.5 rounded bg-foreground/5 border border-foreground/10 text-muted">space</kbd> to shuffle
         </p>
