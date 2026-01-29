@@ -1,0 +1,31 @@
+---
+id: "ptil-106"
+number: 106
+title: "You can ask AI to write documentation that developers will read"
+prompt: "Write technical documentation for [feature/API/tool]. Start with a 2-sentence summary, then show a working code example before explaining the details. Use the format: summary → quick start → full reference."
+tags: ["technical-writing", "documentation", "programming"]
+worksWith: ["Claude", "GPT-4", "Gemini"]
+createdAt: "2025-01-15"
+---
+
+## Why It Works
+
+Developers don't read docs top-to-bottom. They want: what is this, how do I use it, where are the details. The summary → example → reference format matches how developers actually consume documentation.
+
+## Example Output
+
+## Rate Limiter
+
+Limits API requests per user to prevent abuse. Drop-in middleware for Express.
+
+**Quick start:**
+```js
+import { rateLimit } from './middleware';
+app.use(rateLimit({ window: '15m', max: 100 }));
+```
+
+**That's it.** For custom rules, read on...
+
+**Options:**
+- `window` — Time window (default: '15m')
+- `max` — Max requests per window (default: 100)...

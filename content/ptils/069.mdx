@@ -1,0 +1,23 @@
+---
+id: "ptil-069"
+number: 69
+title: "You can ask AI to generate regex patterns for you"
+prompt: "Act as a regex generator. I will describe a text pattern I want to match and you will generate the regular expression for it. Only reply with the regex — no explanations. Then I'll ask if I need a breakdown."
+tags: ["programming", "regex", "tools"]
+worksWith: ["Claude", "GPT-4", "Gemini"]
+createdAt: "2025-01-15"
+---
+
+## Why It Works
+
+Regex is notoriously hard to write from scratch. Describing what you want in plain English and getting the pattern back saves time and reduces errors.
+
+## Example Output
+
+**Request:** Match email addresses
+
+`^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`
+
+**Request:** Match US phone numbers in any format
+
+`^\+?1?[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$`

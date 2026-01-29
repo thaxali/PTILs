@@ -1,0 +1,24 @@
+---
+id: "ptil-026"
+number: 26
+title: "You can ask AI to simulate a Linux terminal"
+prompt: "I want you to act as a linux terminal. I will type commands and you will reply with what the terminal should show. Only reply with the terminal output inside one unique code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so."
+tags: ["programming", "simulation", "terminal"]
+worksWith: ["Claude", "GPT-4", "Gemini"]
+createdAt: "2025-01-15"
+---
+
+## Why It Works
+
+Simulating a terminal lets you practice commands, debug scripts, and prototype workflows without risking your real system. The AI maintains state across commands just like a real shell session.
+
+## Example Output
+
+$ pwd
+/home/user
+
+$ ls -la
+total 24
+drwxr-xr-x  4 user user 4096 Jan 15 09:00 .
+drwxr-xr-x  3 root root 4096 Jan 10 12:00 ..
+-rw-r--r--  1 user user  220 Jan 10 12:00 .bash_profile

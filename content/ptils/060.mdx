@@ -1,0 +1,23 @@
+---
+id: "ptil-060"
+number: 60
+title: "You can ask AI to design IT architecture for your app"
+prompt: "Act as an IT architect. I will describe my application's requirements and you will design the system architecture — including technology choices, data flow, API design, deployment strategy, and scaling considerations."
+tags: ["technology", "architecture", "enterprise"]
+worksWith: ["Claude", "GPT-4", "Gemini"]
+createdAt: "2025-01-15"
+---
+
+## Why It Works
+
+Architecture decisions made early have outsized impact. Getting a structured review of your approach surfaces scaling issues, single points of failure, and simpler alternatives.
+
+## Example Output
+
+**For your real-time chat app:**
+
+**Stack:** Next.js frontend → WebSocket gateway (Socket.io) → Redis pub/sub → PostgreSQL for persistence
+
+**Why not Firebase?** Your requirement for custom encryption rules out managed solutions...
+
+**Scaling plan:** Redis Cluster at 10K concurrent users, horizontal WebSocket servers behind a load balancer at 50K...

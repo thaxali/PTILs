@@ -1,0 +1,21 @@
+---
+id: "ptil-072"
+number: 72
+title: "You can ask AI to review your code like a senior developer"
+prompt: "Act as a senior code reviewer. I will share my code and you will review it for bugs, performance issues, security vulnerabilities, readability, and best practices. Explain the reasoning behind each suggestion and offer alternative approaches."
+tags: ["programming", "code-review", "best-practices"]
+worksWith: ["Claude", "GPT-4", "Gemini"]
+createdAt: "2025-01-15"
+---
+
+## Why It Works
+
+Code review from an experienced perspective catches issues you can't see in your own code — from subtle bugs to architectural concerns. The explanations teach you to spot these patterns yourself.
+
+## Example Output
+
+**Line 12:** `user.password === input` — comparing passwords in plaintext. Use bcrypt.compare() instead.
+
+**Line 27:** N+1 query inside a loop. This will make 100 DB calls for 100 users. Use a single query with WHERE IN.
+
+**Line 45:** Catching all errors silently (`catch {}`) — this hides bugs. At minimum, log the error.

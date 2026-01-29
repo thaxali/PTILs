@@ -1,0 +1,25 @@
+---
+id: "ptil-107"
+number: 107
+title: "You can ask AI to debug your code by describing the symptoms"
+prompt: "My code is supposed to [expected behavior] but instead it [actual behavior]. Here is the code: [paste code]. Find the bug, explain why it's happening, and show me the fix."
+tags: ["programming", "debugging", "problem-solving"]
+worksWith: ["Claude", "GPT-4", "Gemini"]
+createdAt: "2025-01-15"
+---
+
+## Why It Works
+
+Describing expected vs. actual behavior is the foundation of debugging. The AI reads your code with fresh eyes, unclouded by the assumptions that caused the bug.
+
+## Example Output
+
+**Bug found on line 12:**
+```js
+// You wrote:
+if (user.role = 'admin')
+// Should be:
+if (user.role === 'admin')
+```
+
+**Why:** Single `=` is assignment, not comparison. This always evaluates to truthy, so every user gets admin access. Use `===` for strict comparison.

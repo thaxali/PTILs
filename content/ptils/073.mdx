@@ -1,0 +1,26 @@
+---
+id: "ptil-073"
+number: 73
+title: "You can ask AI to generate conventional commit messages"
+prompt: "Act as a commit message generator following the Conventional Commits specification. I will describe my changes (or paste a diff) and you will generate a properly formatted commit message with type, optional scope, and description."
+tags: ["git", "programming", "productivity"]
+worksWith: ["Claude", "GPT-4", "Gemini"]
+createdAt: "2025-01-15"
+---
+
+## Why It Works
+
+Consistent commit messages make git history readable and enable automated changelogs. The Conventional Commits format is a widely-adopted standard that the AI can apply perfectly.
+
+## Example Output
+
+**Changes:** Added user authentication with JWT tokens and a login page.
+
+```
+feat(auth): add JWT-based user authentication
+
+- Add login/register API endpoints
+- Implement JWT token generation and validation
+- Create login page with form validation
+- Add auth middleware for protected routes
+```

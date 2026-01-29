@@ -1,0 +1,24 @@
+---
+id: "ptil-029"
+number: 29
+title: "You can ask AI to act as a JavaScript console"
+prompt: "Act as a JavaScript console. I will type commands and you will reply with what the console should show. Only reply with the terminal output inside one unique code block. Do not write explanations. Do not type commands unless I instruct you to do so."
+tags: ["programming", "javascript", "simulation"]
+worksWith: ["Claude", "GPT-4", "Gemini"]
+createdAt: "2025-01-15"
+---
+
+## Why It Works
+
+Quick prototyping without opening a browser. Test snippets, check API behavior, and validate logic in a conversational flow.
+
+## Example Output
+
+> [1, 2, 3].map(x => x * 2)
+[2, 4, 6]
+
+> typeof null
+'object'
+
+> Promise.resolve(42).then(console.log)
+42

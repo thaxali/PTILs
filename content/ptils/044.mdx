@@ -1,0 +1,21 @@
+---
+id: "ptil-044"
+number: 44
+title: "You can ask AI to develop a cybersecurity strategy"
+prompt: "Act as a cybersecurity specialist. I will describe how data is stored and shared in my system, and you will suggest strategies for protecting it — encryption methods, firewall rules, access policies, and monitoring for suspicious activity."
+tags: ["security", "technology", "strategy"]
+worksWith: ["Claude", "GPT-4", "Gemini"]
+createdAt: "2025-01-15"
+---
+
+## Why It Works
+
+Security is often an afterthought. This prompt forces a systematic review of your data flow and surfaces vulnerabilities you might not have considered.
+
+## Example Output
+
+**Critical findings:**
+
+1. API keys stored in plaintext in .env committed to git — rotate immediately and add to .gitignore
+2. No rate limiting on login endpoint — add brute-force protection
+3. User data transmitted over HTTP in staging — enforce HTTPS everywhere...

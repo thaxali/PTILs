@@ -1,0 +1,25 @@
+---
+id: "ptil-085"
+number: 85
+title: "You can ask AI to explain a codebase you just inherited"
+prompt: "I just inherited a codebase I don't understand. Here is [file/code]. Explain what this code does at a high level, identify the main patterns and design decisions, and flag anything that looks unusual or concerning."
+tags: ["programming", "onboarding", "code-review"]
+worksWith: ["Claude", "GPT-4", "Gemini"]
+createdAt: "2025-01-15"
+---
+
+## Why It Works
+
+Understanding unfamiliar code is one of the hardest parts of software engineering. A high-level walkthrough that explains patterns and flags concerns accelerates onboarding dramatically.
+
+## Example Output
+
+**Overview:** This is a React app using the Repository pattern with a Redux store.
+
+**Key patterns:**
+- Data fetching happens in `/services/` using Axios interceptors for auth
+- State management splits 'server state' (React Query) from 'UI state' (Redux)
+
+**Concerns:**
+- `utils/helpers.ts` is 800 lines — likely a dumping ground that needs refactoring
+- No error boundaries anywhere — one bad component crashes the whole app
