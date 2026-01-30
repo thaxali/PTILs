@@ -2,7 +2,6 @@
 
 import { useState, useCallback } from "react";
 import Toast from "./Toast";
-import { generateShareImage } from "@/lib/generateShareImage";
 import type { PTIL } from "@/lib/ptils";
 
 interface ShareButtonProps {
@@ -22,51 +21,17 @@ export default function ShareButton({ ptil, variant = "icon" }: ShareButtonProps
     setGenerating(true);
 
     try {
-      const blob = await generateShareImage(ptil);
-      const file = new File([blob], `ptils-${ptil.number}.png`, {
-        type: "image/png",
-      });
-
       const promptUrl = `https://ptils.me/til/${ptil.id}`;
 
-      // Try Web Share API with file support (mobile)
-      if (navigator.share && navigator.canShare?.({ files: [file] })) {
+      if (navigator.share) {
         await navigator.share({
-          files: [file],
           title: `Prompt No. ${ptil.number}`,
           url: promptUrl,
         });
         setToastMessage("Shared!");
-      } else if (navigator.share) {
-        // Desktop share (URL only, no file support)
-        // Download the image separately
-        const dlUrl = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = dlUrl;
-        a.download = `ptils-${ptil.number}.png`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(dlUrl);
-
-        await navigator.share({
-          title: `Prompt No. ${ptil.number}`,
-          url: promptUrl,
-        });
-        setToastMessage("Shared! Image also downloaded.");
       } else {
-        // No share API at all — download image + copy URL
-        const dlUrl = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = dlUrl;
-        a.download = `ptils-${ptil.number}.png`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(dlUrl);
-
         await navigator.clipboard.writeText(promptUrl);
-        setToastMessage("Image downloaded & URL copied!");
+        setToastMessage("URL copied to clipboard!");
       }
 
       setShowToast(true);

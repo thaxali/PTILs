@@ -18,7 +18,7 @@ export function generateMetadata({ params }: { params: Promise<{ id: string }> }
     const ptil = getPtilById(id);
     if (!ptil) return { title: "PTILS" };
     return {
-      title: `${ptil.title} — PTILS`,
+      title: `Prompt No. ${ptil.number} — PTILS`,
       description: ptil.whyItWorks,
     };
   });

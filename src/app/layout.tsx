@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     "Bite-sized prompt techniques to expand your AI toolkit. Learn one new thing about AI prompting every day.",
   icons: {
     icon: "/favicon.svg",
+    apple: "/apple-icon",
   },
 };
 
