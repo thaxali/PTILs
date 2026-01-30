@@ -42,7 +42,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* Seena SDK will be added here */}
+      <head>
+        <script
+          src="https://app.seenalabs.io/widget/seena.js"
+          data-site-id="56f8e8ea-12cb-4e4e-9555-e4f5f005992d"
+          async
+        />
+      </head>
       <body
         className={`${instrumentSerif.variable} ${jetbrainsMono.variable} ${aboreto.variable} font-serif antialiased`}
       >
