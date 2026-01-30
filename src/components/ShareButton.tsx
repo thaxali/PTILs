@@ -33,7 +33,7 @@ export default function ShareButton({ ptil, variant = "icon" }: ShareButtonProps
       if (navigator.share && navigator.canShare?.({ files: [file] })) {
         await navigator.share({
           files: [file],
-          title: ptil.title,
+          title: `Prompt No. ${ptil.number}`,
           url: promptUrl,
         });
         setToastMessage("Shared!");
@@ -50,7 +50,7 @@ export default function ShareButton({ ptil, variant = "icon" }: ShareButtonProps
         URL.revokeObjectURL(dlUrl);
 
         await navigator.share({
-          title: ptil.title,
+          title: `Prompt No. ${ptil.number}`,
           url: promptUrl,
         });
         setToastMessage("Shared! Image also downloaded.");

@@ -96,7 +96,7 @@ export default async function OGImage({ params }: { params: Promise<{ id: string
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <span
             style={{
-              fontSize: 32,
+              fontSize: 40,
               color: "rgba(255,255,255,0.7)",
             }}
           >
@@ -104,7 +104,7 @@ export default async function OGImage({ params }: { params: Promise<{ id: string
           </span>
           <span
             style={{
-              fontSize: 42,
+              fontSize: 54,
               color: "rgba(255,255,255,0.8)",
               filter: "blur(14px)",
               lineHeight: 1.25,

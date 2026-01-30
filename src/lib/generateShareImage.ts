@@ -128,17 +128,17 @@ export async function generateShareImage(ptil: PTIL): Promise<Blob> {
   ctx.fillText("Discover New AI Prompts", 48 + logoWidth + 20, 40 + logoHeight / 2);
 
   // 5. "Today's prompt is" — bottom area
-  ctx.font = '32px "Instrument Serif", serif';
+  ctx.font = '40px "Instrument Serif", serif';
   ctx.fillStyle = "rgba(255,255,255,0.7)";
   ctx.textBaseline = "alphabetic";
   ctx.textAlign = "left";
-  ctx.fillText("Today's prompt is", 48, 420);
+  ctx.fillText("Today's prompt is", 48, 400);
 
   // 6. Title text with blur effect
-  ctx.font = '42px "Instrument Serif", serif';
+  ctx.font = '54px "Instrument Serif", serif';
   const titleLines = wrapText(ctx, ptil.title, WIDTH - 96);
-  const lineHeight = 52;
-  const titleStartY = 475;
+  const lineHeight = 66;
+  const titleStartY = 465;
 
   const supportsFilter = typeof ctx.filter !== "undefined";
 
@@ -163,14 +163,14 @@ export async function generateShareImage(ptil: PTIL): Promise<Blob> {
 
   // 7. Silver shimmer dots over blurred text — matched to text bounds
   // Measure actual text width to constrain particles
-  ctx.font = '42px "Instrument Serif", serif';
+  ctx.font = '54px "Instrument Serif", serif';
   let maxTextWidth = 0;
   for (const line of titleLines) {
     maxTextWidth = Math.max(maxTextWidth, ctx.measureText(line).width);
   }
   const particleArea = {
     x: 48,
-    y: titleStartY - 42, // top of first line (ascent)
+    y: titleStartY - 54, // top of first line (ascent)
     w: Math.min(maxTextWidth, WIDTH - 96),
     h: titleLines.length * lineHeight,
   };
