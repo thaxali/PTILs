@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ShareButton from "@/components/ShareButton";
 import Link from "next/link";
 import type { PTIL } from "@/lib/ptils";
 
@@ -98,19 +99,22 @@ export default function HomeClient({ ptils }: { ptils: PTIL[] }) {
           </Link>
         </div>
 
-        <button
-          onClick={handleShuffle}
-          className="mt-5 flex items-center gap-2 px-6 py-3 rounded-full bg-white/40 backdrop-blur-md border border-white/60 text-foreground font-[family-name:var(--font-jetbrains-mono)] text-sm hover:bg-white/60 transition-all duration-200 shadow-sm hover:shadow-md"
-        >
-          <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="16 3 21 3 21 8" />
-            <line x1="4" y1="20" x2="21" y2="3" />
-            <polyline points="21 16 21 21 16 21" />
-            <line x1="15" y1="15" x2="21" y2="21" />
-            <line x1="4" y1="4" x2="9" y2="9" />
-          </svg>
-          Shuffle
-        </button>
+        <div className="mt-5 flex items-center gap-3">
+          <button
+            onClick={handleShuffle}
+            className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/40 backdrop-blur-md border border-white/60 text-foreground font-[family-name:var(--font-jetbrains-mono)] text-sm hover:bg-white/60 transition-all duration-200 shadow-sm hover:shadow-md"
+          >
+            <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="16 3 21 3 21 8" />
+              <line x1="4" y1="20" x2="21" y2="3" />
+              <polyline points="21 16 21 21 16 21" />
+              <line x1="15" y1="15" x2="21" y2="21" />
+              <line x1="4" y1="4" x2="9" y2="9" />
+            </svg>
+            Shuffle
+          </button>
+          <ShareButton ptil={currentPtil} variant="pill" />
+        </div>
 
         <p className="mt-2 text-xs text-muted/60 font-[family-name:var(--font-jetbrains-mono)] hidden sm:block">
           press <kbd className="px-1.5 py-0.5 rounded bg-foreground/5 border border-foreground/10 text-muted">space</kbd> to shuffle

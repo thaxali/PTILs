@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, JetBrains_Mono, Aboreto } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const instrumentSerif = Instrument_Serif({
@@ -24,9 +25,13 @@ const aboreto = Aboreto({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ptils.me"),
   title: "PTILS — Discover one interesting thing you can do with AI today",
   description:
     "Bite-sized prompt techniques to expand your AI toolkit. Learn one new thing about AI prompting every day.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -41,6 +46,7 @@ export default function RootLayout({
         className={`${instrumentSerif.variable} ${jetbrainsMono.variable} ${aboreto.variable} font-serif antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );

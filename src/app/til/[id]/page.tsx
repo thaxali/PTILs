@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CopyButton from "@/components/CopyButton";
 import SaveButton from "@/components/SaveButton";
+import ShareButton from "@/components/ShareButton";
 import ExpandableSection from "@/components/ExpandableSection";
 
 export function generateStaticParams() {
@@ -65,7 +66,10 @@ export default async function PTILDetail({ params }: { params: Promise<{ id: str
           <h1 className="font-[family-name:var(--font-instrument-serif)] text-2xl sm:text-3xl leading-snug flex-1">
             {ptil.title}
           </h1>
-          <SaveButton ptilId={ptil.id} />
+          <div className="flex items-center gap-1">
+            <ShareButton ptil={ptil} variant="icon" />
+            <SaveButton ptilId={ptil.id} />
+          </div>
         </div>
 
         <hr className="border-foreground/10 mb-8" />
