@@ -48,10 +48,6 @@ export default function HomeClient({ ptils }: { ptils: PTIL[] }) {
       <Header />
 
       <main className="flex-1 flex flex-col items-center justify-center px-6 py-4">
-        <p className="font-[family-name:var(--font-instrument-serif)] text-3xl text-foreground mb-6 text-center">
-          Discover New AI Prompts
-        </p>
-
         <div
           key={fadeKey}
           className="relative w-full max-w-md animate-fade-in-up"
