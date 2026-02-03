@@ -45,7 +45,7 @@ export default function RootLayout({
       <head>
         <script
           src="https://app.seenalabs.io/widget/seena.js"
-          data-site-id="56f8e8ea-12cb-4e4e-9555-e4f5f005992d"
+          data-site-id="26fbaf7a-0a85-4e0a-ad3e-6cd9af4c50a3"
           async
         />
       </head>
